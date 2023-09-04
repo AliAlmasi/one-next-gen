@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			media="print"
+			onload='this.media="all"'
+			href="./assets/styles/style.css"
+		/>
+		<title>One Next Gen &mdash; fun project</title>
+	</head>
+	<body>
+		<div class="side">
+			<div class="side__status">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+					<defs>
+						<linearGradient id="gradient" x1="50%" y1="0%" x2="0%" y2="100%">
+							<stop offset="0%" stop-color="#947df1" />
+							<stop offset="50%" stop-color="#e6ccf3" />
+							<stop offset="100%" stop-color="#97dbda" />
+						</linearGradient>
+					</defs>
+					<path
+						fill="url(#gradient)"
+						d="M232,80.18v95.64a16,16,0,0,1-8.32,14l-88,48.17a15.88,15.88,0,0,1-15.36,0l-88-48.17a16,16,0,0,1-8.32-14V80.18a16,16,0,0,1,8.32-14l88-48.17a15.88,15.88,0,0,1,15.36,0l88,48.17A16,16,0,0,1,232,80.18Z"
+					/>
+				</svg>
+				<p class="text-gradient">Status</p>
+			</div>
+			<p class="side__code">a710-xb</p>
+			<div class="side__qrcode">
+				<p class="text-gradient">QR Code</p>
+				<div class="side__qrcode-frame">
+					<img src="./assets/images/qrcode.png" />
+				</div>
+			</div>
+			<div class="side__buttons">
+				<a href="#" class="side__button">Copy</a>
+				<a href="#" class="side__button">Share</a>
+			</div>
+		</div>
+		<main>
+			<div class="main__stats">
+				<div class="main__stat-meters">
+					<div class="single-chart">
+						<svg viewBox="0 0 36 36" class="circular-chart">
+							<defs>
+								<linearGradient
+									id="gradient-tinted"
+									x1="50%"
+									y1="0%"
+									x2="0%"
+									y2="100%"
+								>
+									<stop offset="0%" stop-color="#b4a4f5" />
+									<stop offset="50%" stop-color="#f0e0f8" />
+									<stop offset="100%" stop-color="#cbeded" />
+								</linearGradient>
+							</defs>
+							<path
+								class="circle"
+								stroke-dasharray="70, 100"
+								d="M18 2.0845
+							  a 15.9155 15.9155 0 0 1 0 31.831
+							  a 15.9155 15.9155 0 0 1 0 -31.831"
+								stroke="url(#gradient-tinted)"
+							/>
+							<text x="18" y="20.35" class="percentage" fill="url(#gradient)">
+								70%
+							</text>
+						</svg>
+						<p class="text-gradient">Traffic</p>
+					</div>
+					<div class="single-chart">
+						<svg viewBox="0 0 36 36" class="circular-chart">
+							<path
+								class="circle"
+								stroke-dasharray="90, 100"
+								d="M18 2.0845
+							  a 15.9155 15.9155 0 0 1 0 31.831
+							  a 15.9155 15.9155 0 0 1 0 -31.831"
+								stroke="url(#gradient-tinted)"
+							/>
+							<text x="18" y="20.35" class="percentage" fill="url(#gradient)">
+								90%
+							</text>
+						</svg>
+						<p class="text-gradient">Days</p>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="main__button">Change UUID</a>
+			<div class="main__sideactions">
+				<a href="#" class="main__sideactions-button">Copy Status</a>
+				<a href="#" class="main__sideactions-button">Share Status</a>
+			</div>
+		</main>
+	</body>
+</html>
