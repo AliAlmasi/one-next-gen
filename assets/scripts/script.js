@@ -39,4 +39,9 @@ codeEl.textContent = generateRandomString(5);
 changeUUID.addEventListener(`click`, () => {
 	let x = generateRandomString(5);
 	codeEl.textContent = x;
+	codeEl.classList.add("apply-shake");
+});
+
+codeEl.addEventListener("animationend", (e) => {
+	codeEl.classList.remove("apply-shake");
 });
