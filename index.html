@@ -10,6 +10,7 @@
 			href="./assets/styles/style.css"
 		/>
 		<title>One Next Gen &mdash; fun project</title>
+		<script src="./assets/scripts/script.js" defer></script>
 	</head>
 	<body>
 		<div class="side">
@@ -29,7 +30,7 @@
 				</svg>
 				<p class="text-gradient">Status</p>
 			</div>
-			<p class="side__code">a710-xb</p>
+			<p class="side__code"></p>
 			<div class="side__qrcode">
 				<p class="text-gradient">QR Code</p>
 				<div class="side__qrcode-frame">
@@ -37,7 +38,7 @@
 				</div>
 			</div>
 			<div class="side__buttons">
-				<a href="#" class="side__button">Copy</a>
+				<a href="#" class="side__button show-msgbox">Copy</a>
 				<a href="#" class="side__button">Share</a>
 			</div>
 		</div>
@@ -91,11 +92,28 @@
 					</div>
 				</div>
 			</div>
-			<a href="#" class="main__button">Change UUID</a>
+			<a href="#" class="main__button changeUUid">Change UUID</a>
 			<div class="main__sideactions">
-				<a href="#" class="main__sideactions-button">Copy Status</a>
+				<a href="#" class="main__sideactions-button show-msgbox">Copy Status</a>
 				<a href="#" class="main__sideactions-button">Share Status</a>
 			</div>
 		</main>
+		<div class="msgbox hidden">
+			<button class="close-msgbox">&times;</button>
+			<p>Copied!</p>
+		</div>
+		<div class="overlay hidden"></div>
+		<div class="circles">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 	</body>
 </html>
