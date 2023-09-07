@@ -78,3 +78,9 @@ document
 			.querySelector(".side__qrcode-frame")
 			.classList.remove("apply-shake");
 	});
+
+if (localStorage.getItem("Lastkey")) {
+	return null;
+} else {
+	localStorage.setItem("LastKey", generateRandomString(5));
+}
