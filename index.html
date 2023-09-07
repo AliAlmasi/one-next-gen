@@ -14,6 +14,13 @@
 			onload='this.media="all"'
 			href="./assets/styles/style.css"
 		/>
+		<link
+			rel="stylesheet"
+			media="print"
+			onload='this.media="all"'
+			href="./assets/styles/queries.css"
+		/>
+
 		<title>One Next Gen &mdash; just for fun</title>
 		<script src="./assets/scripts/script.js" defer></script>
 	</head>
@@ -34,6 +41,7 @@
 					/>
 				</svg>
 				<p class="text-gradient">Status</p>
+				<span id="status"></span>
 			</div>
 			<p class="side__code"></p>
 			<div class="side__qrcode">
@@ -44,7 +52,7 @@
 			</div>
 			<div class="side__buttons">
 				<a href="#" class="side__button show-msgbox">Copy</a>
-				<a href="#" class="side__button">Share</a>
+				<a href="#" class="side__button" id="share-qr">Share</a>
 			</div>
 		</div>
 		<main>

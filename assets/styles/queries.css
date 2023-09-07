@@ -1,0 +1,52 @@
+@media (max-width: 83.313em) {
+	.side__status {
+		align-self: unset;
+		margin-left: 0;
+	}
+	.side__qrcode-frame img {
+		width: 26rem;
+		height: auto;
+	}
+}
+
+@media (max-width: 76.875em) {
+	:root {
+		--font-size-lg: 3.4rem;
+	}
+}
+
+@media (max-width: 68.75em) {
+	body {
+		gap: 5rem;
+	}
+	.main__sideactions-button {
+		width: calc(99% / 2);
+	}
+}
+
+@media (max-width: 59.375em) {
+	:root {
+		--font-size-md: 2.8rem;
+		--font-size-lg: 3rem;
+		--font-size-xxxl: 5rem;
+	}
+
+	.side__code {
+		width: 100%;
+	}
+}
+
+@media (max-width: 53.625em) {
+	:root {
+		--font-size-md: 2.4rem;
+		--font-size-lg: 2.8rem;
+	}
+
+	.side__qrcode-frame img {
+		width: 20rem;
+	}
+
+	.side__buttons {
+		flex-direction: column;
+	}
+}

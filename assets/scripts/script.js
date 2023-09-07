@@ -29,19 +29,52 @@ document.addEventListener(`keydown`, function (e) {
 	}
 });
 
+const userTime = new Date().getHours();
+let serviceStatus;
 const generateRandomString = (length) =>
 	Math.random().toString(20).substr(2, length);
 
 const changeUUID = document.querySelector(`.changeUUid`);
 const codeEl = document.querySelector(`.side__code`);
-codeEl.textContent = generateRandomString(5);
+const statusEl = document.getElementById("status");
+codeEl.textContent = localStorage.getItem("LastKey");
+
+if (userTime > 23 || userTime < 3) serviceStatus = false;
+else serviceStatus = true;
+
+if (serviceStatus === true) {
+	statusEl.textContent = "Online";
+} else {
+	statusEl.textContent = "Offline";
+}
 
 changeUUID.addEventListener(`click`, () => {
-	let x = generateRandomString(5);
-	codeEl.textContent = x;
-	codeEl.classList.add("apply-shake");
+	if (serviceStatus === true) {
+		localStorage.removeItem("LastKey");
+		codeEl.textContent = generateRandomString(5);
+		localStorage.setItem("LastKey", codeEl.textContent);
+		codeEl.classList.add("apply-shake");
+	} else {
+		statusEl.classList.add("apply-shake");
+	}
 });
 
 codeEl.addEventListener("animationend", (e) => {
 	codeEl.classList.remove("apply-shake");
 });
+
+statusEl.addEventListener("animationend", (e) => {
+	statusEl.classList.remove("apply-shake");
+});
+
+document.getElementById("share-qr").addEventListener(`click`, () => {
+	document.querySelector(`.side__qrcode-frame`).classList.add("apply-shake");
+});
+
+document
+	.querySelector(`.side__qrcode-frame`)
+	.addEventListener("animationend", () => {
+		document
+			.querySelector(".side__qrcode-frame")
+			.classList.remove("apply-shake");
+	});
