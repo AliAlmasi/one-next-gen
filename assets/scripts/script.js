@@ -37,16 +37,21 @@ const generateRandomString = (length) =>
 const changeUUID = document.querySelector(`.changeUUid`);
 const codeEl = document.querySelector(`.side__code`);
 const statusEl = document.getElementById("status");
-if (!localStorage.getItem("LastKey")) localStorage.setItem("LastKey", generateRandomString(5));
-codeEl.textContent = localStorage.getItem("LastKey");
+
+
 
 if (userTime > 23 || userTime < 3) serviceStatus = false;
 else serviceStatus = true;
 
 if (serviceStatus === true) {
 	statusEl.textContent = "Online";
+	if (!localStorage.getItem("LastKey")){
+		localStorage.setItem("LastKey", generateRandomString(5));
+		codeEl.textContent = localStorage.getItem("LastKey");
+	};
 } else {
 	statusEl.textContent = "Offline";
+	codeEl.textContent = "Error";
 }
 
 changeUUID.addEventListener(`click`, () => {
