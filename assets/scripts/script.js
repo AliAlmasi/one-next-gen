@@ -37,6 +37,7 @@ const generateRandomString = (length) =>
 const changeUUID = document.querySelector(`.changeUUid`);
 const codeEl = document.querySelector(`.side__code`);
 const statusEl = document.getElementById("status");
+if (!localStorage.getItem("LastKey")) localStorage.setItem("LastKey", generateRandomString(5));
 codeEl.textContent = localStorage.getItem("LastKey");
 
 if (userTime > 23 || userTime < 3) serviceStatus = false;
@@ -78,5 +79,3 @@ document
 			.querySelector(".side__qrcode-frame")
 			.classList.remove("apply-shake");
 	});
-
-if (!localStorage.getItem("LastKey")) localStorage.setItem("LastKey", generateRandomString(5));
