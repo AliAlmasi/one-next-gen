@@ -79,8 +79,4 @@ document
 			.classList.remove("apply-shake");
 	});
 
-if (localStorage.getItem("Lastkey")) {
-	return null;
-} else {
-	localStorage.setItem("LastKey", generateRandomString(5));
-}
+if (localStorage.getItem("LastKey")) localStorage.setItem("LastKey", generateRandomString(5));
