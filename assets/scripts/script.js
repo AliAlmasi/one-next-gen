@@ -34,31 +34,38 @@ let serviceStatus;
 const generateRandomString = (length) =>
 	Math.random().toString(20).substr(2, length);
 
-const changeUUID = document.querySelector(`.changeUUid`);
+const changeUUID = document.querySelector(`#changeUUID`);
 const codeEl = document.querySelector(`.side__code`);
 const statusEl = document.getElementById("status");
 
+if (userTime > 23 || userTime < 3) {
+	serviceStatus = false;
+} else {
+	serviceStatus = true;
+}
 
 
 if (userTime > 23 || userTime < 3) serviceStatus = false;
 else serviceStatus = true;
 
-if (serviceStatus === true) {
+if (serviceStatus) {
 	statusEl.textContent = "Online";
-	if (!localStorage.getItem("LastKey")){
-		localStorage.setItem("LastKey", generateRandomString(5));
-		codeEl.textContent = localStorage.getItem("LastKey");
-	};
+	if (!localStorage.getItem("lastKey")) {
+		localStorage.setItem("lastKey", generateRandomString(5));
+		codeEl.textContent = localStorage.getItem("lastKey");
+	} else {
+		codeEl.textContent = localStorage.getItem("lastKey");
+	}
 } else {
 	statusEl.textContent = "Offline";
 	codeEl.textContent = "Error";
 }
 
 changeUUID.addEventListener(`click`, () => {
-	if (serviceStatus === true) {
-		localStorage.removeItem("LastKey");
+	if (serviceStatus) {
+		localStorage.removeItem("lastKey");
 		codeEl.textContent = generateRandomString(5);
-		localStorage.setItem("LastKey", codeEl.textContent);
+		localStorage.setItem("lastKey", codeEl.textContent);
 		codeEl.classList.add("apply-shake");
 	} else {
 		statusEl.classList.add("apply-shake");
